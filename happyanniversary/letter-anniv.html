@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1 Year of loving you</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Dancing+Script:wght@600;700&family=Lato:wght@300;400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style-anniv.css" />
+</head>
+
+<body class="letter-page">
+
+  <div class="bg-wash"></div>
+
+  <!-- background floating flowers -->
+  <div class="bg-flowers" id="bgFlowers"></div>
+
+  <!-- falling petals -->
+  <div class="petals-wrap" id="petals"></div>
+
+  <!-- ── MUSIC PLAYER ── -->
+  <div id="music-player">
+    <span class="player-note">🎵</span>
+    <div class="player-text">
+      <span id="song-title">song title</span>
+      <span id="song-artist">artist</span>
+    </div>
+    <div class="player-controls">
+      <button class="ctrl-btn" onclick="prevSong()">⏮</button>
+      <button class="ctrl-btn play" id="play-btn" onclick="togglePlay()">⏸</button>
+      <button class="ctrl-btn" onclick="nextSong()">⏭</button>
+    </div>
+    <div class="player-progress">
+      <span id="current-time">0:00</span>
+      <input type="range" id="progress-bar" value="0" min="0" max="100" oninput="seek(this.value)" />
+      <span id="duration">0:00</span>
+    </div>
+  </div>
+
+  <!-- ── LETTER ── -->
+  <div class="page">
+    <div class="letter-wrapper">
+      <div class="paper">
+
+        <!-- flower corner accents — small single-stem flowers -->
+        <div class="fl-corner tl">
+          <svg width="52" height="58" viewBox="0 0 52 58" xmlns="http://www.w3.org/2000/svg">
+            <line x1="26" y1="56" x2="26" y2="28" stroke="#5a9a4a" stroke-width="2" stroke-linecap="round" />
+            <ellipse cx="18" cy="42" rx="8" ry="3.5" fill="#6aaa5a" opacity=".7" transform="rotate(-30 18 42)" />
+            <g transform="translate(26,24)">
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c9956a" opacity=".8" transform="rotate(0)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c9956a" opacity=".75" transform="rotate(45)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#d4a070" opacity=".72" transform="rotate(90)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c9956a" opacity=".78" transform="rotate(135)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#bf8858" opacity=".74" transform="rotate(180)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c9956a" opacity=".77" transform="rotate(225)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#d4a070" opacity=".72" transform="rotate(270)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c9956a" opacity=".76" transform="rotate(315)" />
+              <circle cx="0" cy="0" r="5.5" fill="#e8c06a" />
+              <circle cx="0" cy="0" r="3.5" fill="#d4a848" />
+              <circle cx="0" cy="0" r="1.8" fill="#c09030" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="fl-corner tr">
+          <svg width="52" height="58" viewBox="0 0 52 58" xmlns="http://www.w3.org/2000/svg">
+            <line x1="26" y1="56" x2="26" y2="28" stroke="#5a9a4a" stroke-width="2" stroke-linecap="round" />
+            <ellipse cx="34" cy="42" rx="8" ry="3.5" fill="#6aaa5a" opacity=".7" transform="rotate(30 34 42)" />
+            <g transform="translate(26,24)">
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#b8c86a" opacity=".8" transform="rotate(0)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#a8b85a" opacity=".75" transform="rotate(45)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c0d070" opacity=".72" transform="rotate(90)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#b8c86a" opacity=".78" transform="rotate(135)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#a8b85a" opacity=".74" transform="rotate(180)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#b8c86a" opacity=".77" transform="rotate(225)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c0d070" opacity=".72" transform="rotate(270)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#b8c86a" opacity=".76" transform="rotate(315)" />
+              <circle cx="0" cy="0" r="5.5" fill="#d4b060" />
+              <circle cx="0" cy="0" r="3.5" fill="#c09848" />
+              <circle cx="0" cy="0" r="1.8" fill="#a87830" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="fl-corner bl">
+          <svg width="52" height="58" viewBox="0 0 52 58" xmlns="http://www.w3.org/2000/svg">
+            <line x1="26" y1="56" x2="26" y2="28" stroke="#5a9a4a" stroke-width="2" stroke-linecap="round" />
+            <ellipse cx="18" cy="42" rx="8" ry="3.5" fill="#6aaa5a" opacity=".7" transform="rotate(-30 18 42)" />
+            <g transform="translate(26,24)">
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c08090" opacity=".8" transform="rotate(0)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#b87080" opacity=".75" transform="rotate(45)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#cc90a0" opacity=".72" transform="rotate(90)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c08090" opacity=".78" transform="rotate(135)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#b87080" opacity=".74" transform="rotate(180)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c08090" opacity=".77" transform="rotate(225)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#cc90a0" opacity=".72" transform="rotate(270)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c08090" opacity=".76" transform="rotate(315)" />
+              <circle cx="0" cy="0" r="5.5" fill="#e0b0a0" />
+              <circle cx="0" cy="0" r="3.5" fill="#c89080" />
+              <circle cx="0" cy="0" r="1.8" fill="#a86858" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="fl-corner br">
+          <svg width="52" height="58" viewBox="0 0 52 58" xmlns="http://www.w3.org/2000/svg">
+            <line x1="26" y1="56" x2="26" y2="28" stroke="#5a9a4a" stroke-width="2" stroke-linecap="round" />
+            <ellipse cx="34" cy="42" rx="8" ry="3.5" fill="#6aaa5a" opacity=".7" transform="rotate(30 34 42)" />
+            <g transform="translate(26,24)">
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c9956a" opacity=".78" transform="rotate(0)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c08090" opacity=".74" transform="rotate(45)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#b8c86a" opacity=".72" transform="rotate(90)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c9956a" opacity=".76" transform="rotate(135)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c08090" opacity=".73" transform="rotate(180)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#b8c86a" opacity=".72" transform="rotate(225)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c9956a" opacity=".75" transform="rotate(270)" />
+              <ellipse cx="0" cy="-11" rx="3.5" ry="8.5" fill="#c08090" opacity=".74" transform="rotate(315)" />
+              <circle cx="0" cy="0" r="5.5" fill="#d4b060" />
+              <circle cx="0" cy="0" r="3.5" fill="#c09848" />
+              <circle cx="0" cy="0" r="1.8" fill="#a87830" />
+            </g>
+          </svg>
+        </div>
+
+        <!-- Corner photos -->
+        <div class="corner-photo top-left">
+          <img src="maskels1.jfif" alt="us">
+        </div>
+        <div class="corner-photo top-right">
+          <img src="love1.jfif" alt="us">
+        </div>
+        <div class="corner-photo bottom-left">
+          <img src="maskels2.jfif" alt="us">
+        </div>
+        <div class="corner-photo bottom-right">
+          <img src="love2.jfif" alt="us">
+        </div>
+
+        <!-- Paper content -->
+        <div class="paper-header">
+          <span class="paper-deco"></span>
+          <h1 class="paper-title">My Kristine,</h1>
+          <div class="paper-line"></div>
+        </div>
+
+        <div class="letter-body">
+          <!--
+          ════════════════════════════════════════
+          ♡  WRITE YOUR LETTER BELOW HERE  ♡
+          ════════════════════════════════════════
+          Replace the placeholder-text paragraph
+          with <p class="letter-text"> tags.
+          Add as many paragraphs as you want —
+          the paper grows to fit everything. ♡
+          -->
+          <p class="letter-text">
+            Happy anniversary my ikaw! Grabe, time really flew past us ha. It's been a year na since we got together.
+            For the first four months, we were both extremely immature. Got separated, but eventually found our way
+            back. And I'm glad that we did.
+          </p>
+          <p class="letter-text">
+            I'm really grateful na we're still together after all this time love. Those misunderstandings, those
+            arguments, we tried to fix it despite the fact na we were getting hurt. I promise, I'll always fight for you
+            love. Whatever it is, we'll fix it. You're really the person that I've always wished for.
+          </p>
+          <p class="letter-text">
+            I don't believe in god, or any kind of higher being. But in case there is one, I'm thankful that they let us
+            meet. Kumbaga based sa kanta ni Yeng — ikaw yung "ikaw" ko eh. The person that I was waiting for. My
+            soulmate.
+          </p>
+          <p class="letter-text">
+            There's still a lot more years ahead of us love. May bahay pa tayo na gagawin, pusang aalagaan, at lamesang
+            pag
+            kakainan ng magkasama. And I hope you're still with me in those times. Thank you for being my reason love.
+            My
+            biggest supporter.
+
+          </p>
+          <p class="letter-text">
+            I really love you. I've said that multiple times before, and I'll keep saying it. I love you.
+          </p>
+        </div>
+
+        <!-- flower divider -->
+        <div class="fl-divider">
+          <div class="fl-divider-line"></div>
+          <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" opacity=".45">
+            <g transform="translate(11,11)">
+              <ellipse cx="0" cy="-7" rx="2.5" ry="5.5" fill="#c9956a" transform="rotate(0)" />
+              <ellipse cx="0" cy="-7" rx="2.5" ry="5.5" fill="#b8c86a" transform="rotate(60)" />
+              <ellipse cx="0" cy="-7" rx="2.5" ry="5.5" fill="#c08090" transform="rotate(120)" />
+              <ellipse cx="0" cy="-7" rx="2.5" ry="5.5" fill="#c9956a" transform="rotate(180)" />
+              <ellipse cx="0" cy="-7" rx="2.5" ry="5.5" fill="#b8c86a" transform="rotate(240)" />
+              <ellipse cx="0" cy="-7" rx="2.5" ry="5.5" fill="#c08090" transform="rotate(300)" />
+              <circle cx="0" cy="0" r="3.5" fill="#e8c06a" />
+              <circle cx="0" cy="0" r="2" fill="#d4a848" />
+            </g>
+          </svg>
+          <div class="fl-divider-line r"></div>
+        </div>
+
+        <div class="paper-footer">
+          <div class="paper-line"></div>
+          <p class="sign-off">forever yours,</p>
+          <p class="signature">
+            <!-- change to your name -->
+            Mj ✿
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="main-anniv.js"></script>
+  <script>
+    // Inject background flowers (same as index)
+    (function () {
+      const wrap = document.getElementById('bgFlowers');
+      const colors = [
+        { petal: '#c9956a', center: '#d4a848' },
+        { petal: '#b8c86a', center: '#c09848' },
+        { petal: '#c08090', center: '#c89080' },
+        { petal: '#d4a070', center: '#e8c06a' },
+        { petal: '#a8b85a', center: '#c09030' },
+      ];
+      for (let i = 0; i < 12; i++) {
+        const c = colors[i % colors.length];
+        const div = document.createElement('div');
+        div.className = 'bg-fl';
+        div.innerHTML = `<svg viewBox="0 0 60 70" xmlns="http://www.w3.org/2000/svg">
+          <line x1="30" y1="68" x2="30" y2="34" stroke="#5a9a4a" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="20" cy="52" rx="9" ry="4" fill="#6aaa5a" opacity=".7" transform="rotate(-30 20 52)"/>
+          <g transform="translate(30,30)">
+            ${[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map(a =>
+          `<ellipse cx="0" cy="-13" rx="4" ry="10" fill="${c.petal}" opacity=".8" transform="rotate(${a})"/>`
+        ).join('')}
+            <circle cx="0" cy="0" r="6" fill="${c.center}"/>
+            <circle cx="0" cy="0" r="3.5" fill="${c.center}" opacity=".7"/>
+          </g>
+        </svg>`;
+        wrap.appendChild(div);
+      }
+    })();
+  </script>
+</body>
+
+</html>
